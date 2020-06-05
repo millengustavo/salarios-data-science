@@ -1,16 +1,20 @@
 # Salários em carreiras de dados
 
-Quanto estão ganhando as pessoas com características parecidas com a sua?
+Quanto estão ganhando as pessoas com características parecidas com as suas?
 
 Descubra com esse aplicativo interativo
 
-## How to use
+Fonte dos dados: Pesquisa de mercado de Data Science feita pelo Data Hackers
+
+[https://www.kaggle.com/datahackers/pesquisa-data-hackers-2019](https://www.kaggle.com/datahackers/pesquisa-data-hackers-2019)
+
+## Instalação
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run the app
+## Como rodar
 
 ```bash
 streamlit run src/app.py
