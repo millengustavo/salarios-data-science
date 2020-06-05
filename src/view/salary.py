@@ -9,6 +9,8 @@ def plot_salary(df: pd.DataFrame) -> None:
         st.title("Geral")
         sns.kdeplot(df["('P16', 'salary_range')"], shade=True, legend=False)
         sns.despine()
+        plt.xlim((0, 38000))
+        plt.xlabel("Salário (R$)")
         st.pyplot()
     else:
         st.markdown("> Nenhum participante respondeu com esses filtros")
@@ -32,11 +34,12 @@ def plot_segmented_salary(df: pd.DataFrame, segmentation_column: str, title: str
             unique_labels = []
             for value in unique_values:
                 if df[df[segmentation_column] == value].shape[0] != 0:
-                    g = sns.kdeplot(df[df[segmentation_column] == value]["('P16', 'salary_range')"], shade=True, legend=False)
+                    sns.kdeplot(df[df[segmentation_column] == value]["('P16', 'salary_range')"], shade=True, legend=False)
                     unique_labels.append(value)
             sns.despine()
             plt.legend(labels=unique_labels)
-            plt.show(g)
+            plt.xlim((0, 38000))
+            plt.xlabel("Salário (R$)")
             st.pyplot()
         except Exception as e:
             st.markdown(f"> {e}")
