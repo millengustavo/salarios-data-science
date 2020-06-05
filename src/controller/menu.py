@@ -3,22 +3,18 @@ import pandas as pd
 
 
 def filter_data(df: pd.DataFrame) -> pd.DataFrame:
-    # df = _select_age(df)
-    # df = _select_gender(df)
-    # df = _select_living_in_brasil(df)
-    # df = _select_living_state(df)
     df = _select_degree_level(df)
     df = _select_time_experience_data_science(df)
-    df = _select_time_experience_before(df)
     df = _select_job_situation(df)
-    df = _select_is_data_science_professional(df)
     df = _select_most_used_programing_languages(df)
-    df = _select_online_courses(df)
-    df = _select_is_manager(df)
-    df = _select_anonymized_degree_area(df)
-    df = _select_anonymized_market_sector(df)
-    df = _select_anonymized_role(df)
-    df = _select_anonymized_manager_role(df)
+    # df = _select_time_experience_before(df)
+    # df = _select_is_data_science_professional(df)
+    # df = _select_online_courses(df)
+    # df = _select_is_manager(df)
+    # df = _select_anonymized_degree_area(df)
+    # df = _select_anonymized_market_sector(df)
+    # df = _select_anonymized_role(df)
+    # df = _select_anonymized_manager_role(df)
 
     return df
 
