@@ -1,3 +1,3 @@
 #!/bin/bash
 
-streamlit run src/app.py
+streamlit run src/data_science_salary.py

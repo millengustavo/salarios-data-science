@@ -17,5 +17,5 @@ pip install -r requirements.txt
 ## Como rodar
 
 ```bash
-streamlit run src/app.py
+streamlit run src/data_science_salary.py
 ```
