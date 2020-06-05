@@ -18,4 +18,8 @@ plot_salary(df)
 print_salary(df)
 
 plot_segmented_salary(df, "('P2', 'gender')", "Gênero")
+plot_segmented_salary(df, "('P1', 'age')", "Idade")
 plot_segmented_salary(df, "('P5', 'living_state')", "Estado de residência")
+plot_segmented_salary(df, "('P13', 'manager')", "ter cargo gerencial")
+plot_segmented_salary(df, "('P19', 'is_data_science_professional')", "é DS?")
+plot_segmented_salary(df, "('P34', 'online_courses')", "fez cursos online?")
