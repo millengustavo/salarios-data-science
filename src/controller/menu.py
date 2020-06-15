@@ -96,6 +96,8 @@ def _default_selectbox(
     question: str) -> pd.DataFrame:
     options_list = ["-"]
     options_list.extend(list(df[column_name].unique()))
+    if None in options_list:
+        options_list.remove(None)
     selected_option =  st.sidebar.selectbox(
         question,
         options=options_list,

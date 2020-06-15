@@ -35,6 +35,7 @@ def plot_segmented_salary(df: pd.DataFrame, segmentation_column: str, title: str
         try:
             st.markdown("-----")
             st.title(f"Salários por {title}")
+            df = df[~df[segmentation_column].isna()].copy()
             c = alt.Chart(df).transform_density(
                 "salary_range",
                 groupby=[segmentation_column],
