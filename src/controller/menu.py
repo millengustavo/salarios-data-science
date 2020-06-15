@@ -21,72 +21,72 @@ def filter_data(df: pd.DataFrame) -> pd.DataFrame:
 
 def _select_degree_level(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df,
-     "('P8', 'degreee_level')", 
+     "degreee_level", 
      "Escolaridade")
 
 
 def _select_time_experience_data_science(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df, 
-    "('P17', 'time_experience_data_science')",
+    "time_experience_data_science",
      "Tempo de Experiência com Data Science")
 
 
 def _select_time_experience_before(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df, 
-    "('P18', 'time_experience_before')", 
+    "time_experience_before", 
     "Tempo de experiência anterior na área de TI/Engenharia de Software")
 
 
 def _select_job_situation(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df, 
-    "('P10', 'job_situation')", 
+    "job_situation", 
     "Situação atual de trabalho")
 
 
 def _select_is_data_science_professional(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df,
-     "('P19', 'is_data_science_professional')", 
+     "is_data_science_professional", 
      "Profissional de Data Science")
 
 
 def _select_most_used_programing_languages(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df,
-     "('P22', 'most_used_proggraming_languages')", 
+     "most_used_proggraming_languages", 
      "Linguagem de Programação mais utilizada")
 
 
 def _select_online_courses(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df,
-     "('P34', 'online_courses')", 
+     "online_courses", 
      "Cursos online")
 
 
 def _select_anonymized_degree_area(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df,
-     "('D3', 'anonymized_degree_area')", 
+     "anonymized_degree_area", 
      "Área de formação")
 
 
 def _select_anonymized_market_sector(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df,
-     "('D5', 'anonymized_manager_level')", 
+     "anonymized_manager_level", 
      "Setor de mercado")
 
 
 def _select_anonymized_role(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df,
-     "('D6', 'anonymized_role')", 
+     "anonymized_role", 
      "Cargo")
 
 
 def _select_is_manager(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df,
-     "('P13', 'manager')", 
+     "manager", 
      "Cargo Gerencial")
     
 def _select_anonymized_manager_role(df: pd.DataFrame) -> pd.DataFrame:
     return _default_selectbox(df,
-     "('D5', 'anonymized_manager_level')", 
+     "anonymized_manager_level", 
      "Nível Gerencial")
 
 

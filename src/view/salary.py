@@ -1,17 +1,22 @@
 import pandas as pd
 import streamlit as st
-import seaborn as sns
-import matplotlib.pyplot as plt
+import altair as alt
 
 
 def plot_salary(df: pd.DataFrame) -> None:
     if df.shape[0] != 0: 
         st.title("Geral")
-        sns.kdeplot(df["('P16', 'salary_range')"], shade=True, legend=False)
-        sns.despine()
-        plt.xlim((0, 38000))
-        plt.xlabel("Salário (R$)")
-        st.pyplot()
+        c = alt.Chart(df).transform_fold(
+            ["salary_range"],
+            as_=['Legenda', 'Salários']
+        ).mark_area(
+            opacity=0.7,
+            interpolate='step'
+        ).encode(
+            alt.X('Salários:Q', bin=alt.Bin(maxbins=100)),
+            alt.Y('count()', stack=None, axis=alt.Axis(title="Número de pessoas")),
+        )
+        st.altair_chart(c, use_container_width=True)
     else:
         st.markdown("> Nenhum participante respondeu com esses filtros")
 
@@ -20,27 +25,29 @@ def plot_salary(df: pd.DataFrame) -> None:
 def print_salary(df: pd.DataFrame) -> None:
     if df.shape[0] != 0:
         st.markdown("**Número de pessoas que responderam com esses filtros**: {}".format(df.shape[0]))
-        st.markdown("**Mediana**: {}".format(int(df["('P16', 'salary_range')"].median())))
-        st.markdown("**Máximo**: {}".format(df["('P16', 'salary_range')"].max()))
-        st.markdown("**Mínimo**: {}".format(df["('P16', 'salary_range')"].min()))   
+        st.markdown("**Mediana**: {}".format(int(df["salary_range"].median())))
+        st.markdown("**Máximo**: {}".format(df["salary_range"].max()))
+        st.markdown("**Mínimo**: {}".format(df["salary_range"].min()))   
 
 
 def plot_segmented_salary(df: pd.DataFrame, segmentation_column: str, title: str) -> None:
     if df.shape[0] != 0:
         try:
-            unique_values = list(df[segmentation_column].unique())
             st.markdown("-----")
             st.title(f"Salários por {title}")
-            unique_labels = []
-            for value in unique_values:
-                if df[df[segmentation_column] == value].shape[0] != 0:
-                    sns.kdeplot(df[df[segmentation_column] == value]["('P16', 'salary_range')"], shade=True, legend=False)
-                    unique_labels.append(value)
-            sns.despine()
-            plt.legend(labels=unique_labels)
-            plt.xlim((0, 38000))
-            plt.xlabel("Salário (R$)")
-            st.pyplot()
+            c = alt.Chart(df).transform_density(
+                "salary_range",
+                groupby=[segmentation_column],
+                as_=['salary_range', 'density'],
+            ).mark_area(
+                opacity=0.5,
+                interpolate='step'
+            ).encode(
+                alt.X('salary_range:Q', bin=alt.Bin(maxbins=100)),
+                alt.Y('density:Q', stack=None),
+                alt.Color(f'{segmentation_column}:N')
+            )
+            st.altair_chart(c, use_container_width=True)
         except Exception as e:
             st.markdown(f"> {e}")
     else:
