@@ -8,5 +8,8 @@ def print_description() -> None:
 
     Fonte dos dados: Pesquisa de mercado de Data Science feita pelo Data Hackers
     [https://www.kaggle.com/datahackers/pesquisa-data-hackers-2019](https://www.kaggle.com/datahackers/pesquisa-data-hackers-2019)
+
+    Código fonte:
+    [https://github.com/millengustavo/salarios-data-science](https://github.com/millengustavo/salarios-data-science)
     """)
     st.sidebar.title("Filtros")
