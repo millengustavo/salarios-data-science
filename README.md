@@ -1,5 +1,5 @@
 # Salários em carreiras de dados 
-[![MIT License](https://img.shields.io/badge/License-MIT-Green.svg)](https://opensource.org/licenses/MPL-2.0)
+[![MIT License](https://img.shields.io/badge/License-MIT-Green.svg)](https://opensource.org/licenses/MIT)
 
 > Qual o salário dos profissionais de Data Science no Brasil? Descubra com esse aplicativo interativo!
 
