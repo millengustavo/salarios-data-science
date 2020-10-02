@@ -1,3 +1,5 @@
+""" Main streamlit app entrypoint """
+
 import streamlit as st
 
 from model.file import load_data
