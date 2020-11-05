@@ -27,13 +27,17 @@ def print_salary(df: pd.DataFrame) -> None:
     """ Function to print salary statistics from dataframe """
     if df.shape[0] != 0:
         st.markdown(
-            "**Número de pessoas que responderam com esses filtros**: {}".format(
-                df.shape[0]
-            )
+            f"""
+            ---
+            
+            **Número de pessoas que responderam com esses filtros**: {df.shape[0]}
+            """
         )
-        st.markdown("**Mediana**: {}".format(int(df["salary_range"].median())))
-        st.markdown("**Máximo**: {}".format(df["salary_range"].max()))
-        st.markdown("**Mínimo**: {}".format(df["salary_range"].min()))
+        st.markdown(
+            f"""
+        **Mediana**: {int(df["salary_range"].median())} | **Máximo**: {df["salary_range"].max()} | **Mínimo**: {df["salary_range"].min()}
+        """
+        )
 
 
 def plot_segmented_salary(
